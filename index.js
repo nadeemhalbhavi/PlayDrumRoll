@@ -9,9 +9,9 @@ function handleClick() {
 
     var buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML)
-    buttonAnimation(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML)
 
-    
+
 }
 
 function drumClicker() {
@@ -31,17 +31,17 @@ drumClicker();
 function keypressed(event) {
     pressed = event.key
     makeSound(pressed);
-    buttonAnimationn(pressed);
+    buttonAnimation(pressed)
 }
 
 
-var keyBoardkeys = document.addEventListener("keypress", keypressed)
+var keyBoardkeys = document.addEventListener("keydown", keypressed)
 
 
 
 
 
-function makeSound(key){
+function makeSound(key) {
 
     switch (key) {
         case "w":
@@ -83,6 +83,9 @@ function makeSound(key){
 
 
 }
+
+
+
 function buttonAnimation(currentkey){
 
     var activeButton = document.querySelector("." + currentkey)
@@ -92,7 +95,8 @@ function buttonAnimation(currentkey){
     setTimeout(function(){
         activeButton.classList.remove("pressed");
         
-    },100)}
+    },100)
+}
 
 
 
